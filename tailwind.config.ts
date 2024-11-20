@@ -1,16 +1,44 @@
-// tailwind.config.ts
-import type { Config } from "tailwindcss";
+// import type { Config } from 'tailwindcss';
 
-const config: Config = {
+// const config: Config = {
+//   content: [
+//     './pages/**/*.{js,ts,jsx,tsx,mdx}',
+//     './components/**/*.{js,ts,jsx,tsx,mdx}',
+//     './app/**/*.{js,ts,jsx,tsx,mdx}',
+//   ],
+//   theme: {
+//     extend: {
+//       gridTemplateColumns: {
+//         '13': 'repeat(13, minmax(0, 1fr))',
+//       colors: {
+//         blue: {
+//           400: '#2589FE',
+//           500: '#0070F3',
+//           600: '#2F6FEB',
+//         },
+//       },
+//     },
+//     keyframes: {
+//       shimmer: {
+//         '100%': {
+//           transform: 'translateX(100%)',
+//         },
+//       },
+//     },
+//   },
+//   plugins: [require('@tailwindcss/forms')],
+// };
+// export default config;
+
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",  // If you're using this directory
+    "./app/**/*.{js,ts,jsx,tsx}", // or "./pages/**/*.{js,ts,jsx,tsx}" depending on where your pages are
+    "./components/**/*.{js,ts,jsx,tsx}",  // Ensure this is correct for where your components are
   ],
   theme: {
     extend: {},
   },
   plugins: [],
 };
-
-export default config;
