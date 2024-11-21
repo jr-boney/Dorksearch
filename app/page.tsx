@@ -1,14 +1,13 @@
-"use client"; // Mark this file as a client component since it uses React hooks
+'use client'
 
 import { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import DorkList from '../components/DorkList';
-import Tooltip from '../components/Tooltip';
 
 const Home = () => {
   // Set the categories and dorks
   const [domain, setDomain] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('directoryLeaks');
+  const [selectedCategory, setSelectedCategory] = useState<keyof typeof dorksByCategory>('directoryLeaks');
 
   // Define dorks by category
   const dorksByCategory = {
@@ -152,12 +151,9 @@ const Home = () => {
       'inurl:"/api/" "client_secret"',
     ],
   };
-  
-  
-
   // Handle category change
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCategory(event.target.value);
+    setSelectedCategory(event.target.value as keyof typeof dorksByCategory); // Type assertion
   };
 
   const handleDomainChange = (newDomain: string) => {
